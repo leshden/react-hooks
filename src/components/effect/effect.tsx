@@ -1,6 +1,16 @@
+import Button from '../button/Button';
+
 const Effect = () => {
+
+  const handleClick = () => {
+    console.log('click!');
+  }
+
   return(
-    <p>useEffect</p>
+    <>
+      <p>useEffect</p>
+      <Button onClick={handleClick}> Click </Button>
+    </>
   )
 }
 

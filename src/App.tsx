@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import Effect from './components/effect/effect';
+import Header from './components/header/Header';
+import Effect from './components/effect/Effect';
 
 function App() {
   return (
     <div className="App">
-      <header>
-        Hooks
-      </header>
+      <Header />
       <Effect />
     </div>
   );
