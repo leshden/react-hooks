@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header className='header-container'>
-      <h3>Hooks</h3>
+      <h3>React Hooks</h3>
       <Button className='header-toggle-theme' onClick={changeTheme}>
         <img src={isDark ? moon : sun} className="icon-theme" alt="icon-theme" />
       </Button>
