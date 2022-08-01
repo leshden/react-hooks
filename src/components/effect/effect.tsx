@@ -1,13 +1,10 @@
-import Button from '../button/Button';
 import {useEffect} from 'react';
 import { CodeBlock, dracula } from "react-code-blocks";
+import {howAddFunctionToUseEffect, callUseEffectInComponent} from '../../code/use-effect/CodeStrings';
+import RenderEffect from '../render-effect/RenderEffect';
 import './Effect.css'
 
 const Effect = () => {
-
-  const handleClick = () => {
-    console.log('click!');
-  }
 
   const arrowFunc = () => {
     console.log('Вызывали переданную функцию');
@@ -15,34 +12,8 @@ const Effect = () => {
 
   useEffect(arrowFunc);
 
-  const howAddFunctionToUseEffect = `
-  useEffect(function() {
-    console.log('Вызывали переданную функцию');
-  }) // 1-обычная функция
-
-  useEffect(() => {
-    console.log('Вызывали переданную функцию');
-  }) // 2-стрелочная функция
-
-  // можно определить их отдельно и передать
-  function regularFunc() {
-    console.log('Вызывали переданную функцию');
-  }
-  useEffect(regularFunc); //3-обычная функция
-
-  const arrowFunc = () => {
-    console.log('Вызывали переданную функцию');
-  }
-  useEffect(arrowFunc); // 4-стрелочная функция
-  `;
-
-  const strCode = `const Effect = () => {
-    useEffect(()=>{})
-    return (<p> Отрисовали компонент Effect </p>)
-  }`;
-
   return(
-    <>
+    <div className='effect-container'>
       <h1>useEffect</h1>
       <p><strong>useEffect</strong> в качестве аргумента принимает <strong>функцию</strong>, которую потом будет вызывать.
       Функцию передать в хук можно разными способами.</p>
@@ -54,19 +25,18 @@ const Effect = () => {
         wrapLines={true}
         />
       </div>
-      <p><strong>useEffect</strong> вызываем внутри компонента (у нас компонент называется <strong>Effect</strong>).
-        В качестве аргумента <strong>useEffect</strong> принимает стрелочную функцию (можно и обычную функцию)</p>
+      <p><strong>useEffect</strong> вызываем внутри компонента (у нас компонент называется <strong>Effect</strong>).</p>
       <div className='code-effect'>
         <CodeBlock
-        text={strCode}
+        text={callUseEffectInComponent}
         language={'jsx'}
         theme={dracula}
         wrapLines={true}
         />
       </div>
-      <p><strong>useEffect</strong> будет вызываться после кадой отрисовки нашего компонента <strong>Effect</strong></p>
-      <Button onClick={handleClick}> Click </Button>
-    </>
+      <p><strong>useEffect</strong> будет вызываться после каждой отрисовки нашего компонента <strong>Effect</strong></p>
+      <RenderEffect />
+    </div>
   )
 }
 

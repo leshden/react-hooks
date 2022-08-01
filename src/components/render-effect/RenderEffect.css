@@ -1,0 +1,38 @@
+.canvas-container {
+  height: 100px;
+  width: 80%;
+  border: 2px solid gray;
+  position: relative;
+  display: flex;
+}
+
+.browser-container {
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  overflow:hidden;
+}
+
+.console-container {
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+}
+
+.browser-wave {
+  content: "";
+  position: absolute;
+  background: lightblue;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  top: 0;
+  z-index: 0;
+  -webkit-transition: right 1s ease-in;
+  opacity: 0.5;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
