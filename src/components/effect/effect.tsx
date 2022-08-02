@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import { CodeBlock, dracula } from "react-code-blocks";
-import {howAddFunctionToUseEffect, callUseEffectInComponent} from '../../code/use-effect/CodeStrings';
+import {howAddFunctionToUseEffect, callUseEffectInComponent, callUseEffectWithSecondArg} from '../../code/use-effect/CodeStrings';
 import RenderEffect from '../render-effect/RenderEffect';
 import './Effect.css'
 
@@ -36,6 +36,18 @@ const Effect = () => {
       </div>
       <p><strong>useEffect</strong> будет вызываться после каждой отрисовки нашего компонента <strong>Effect</strong></p>
       <RenderEffect />
+      <p>Если такой частый вызов <strong>useEffect</strong> не устраивает, то можно вызывать наш хук при определенных
+      условиях. Эти условия подставляются в качеcтве второго аргумента, в виде массива значений <strong>[]</strong></p>
+      <div className='code-effect'>
+        <CodeBlock
+        text={callUseEffectWithSecondArg}
+        language={'jsx'}
+        theme={dracula}
+        wrapLines={true}
+        />
+      </div>
+      <p>Если в массиве нет значений (<strong>[]-пустой</strong>), то <strong>useEffect</strong> вызовется <strong> только 1 раз</strong> после
+      первой отрисовки нашего компонента <strong>Effect</strong>.</p>
     </div>
   )
 }

@@ -25,3 +25,10 @@ export const callUseEffectInComponent = `const Effect = () => {
   })
   return (<p> Отрисовали компонент Effect </p>)
 }`;
+
+export const callUseEffectWithSecondArg = `
+const arrowFunc = () => {
+  console.log('Вызывали переданную функцию');
+}
+useEffect(arrowFunc, []); // [] - массив значений
+`;

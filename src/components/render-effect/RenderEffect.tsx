@@ -4,27 +4,32 @@ import './RenderEffect.css';
 
 const RenderEffect = () => {
 
-  const [renderTxt, setRenderTxt] = useState('');
-  const [consoleTxt, setConsoleTxt] = useState('');
+  const [renderTxt, setRenderTxt] = useState<string>('');
+  const [consoleTxt, setConsoleTxt] = useState<string[]>([]);
+  const [wave, setWave] = useState<{right: string, transition?: string}>({"right": "100%"})
 
   const handleClick = () => {
     setRenderTxt('Отрисовали компонент Effect');
+    setWave({"right": "50%", "transition": "right 1s ease-in"})
     setTimeout(()=>{
-      setConsoleTxt('Вызывали переданную функцию');
+      setConsoleTxt([...consoleTxt, 'Вызывали переданную функцию']);
+      setWave({"right": "100%"})
     }, 1000);
   }
 
   return(
     <>
     <section className='canvas-container'>
-      <div className='browser-wave' style={{"right": `${renderTxt ? '50%' : '100%'}`}}>
-      </div>
-      <div className='browser-container' style={{"animation": `${renderTxt ? 'fadeIn 1s' : ''}`}}>
-        {renderTxt}
-      </div>
-      <div className='console-container'>
-        {consoleTxt}
-      </div>
+      <article className='browser-container'>
+        <div className='browser-wave' style={wave}>
+        </div>
+        <div className='browser-text' style={{"animation": `${renderTxt ? 'fadeIn 1s' : ''}`}}>
+          {renderTxt}
+        </div>
+      </article>
+      <article className='console-container'>
+        {consoleTxt.map((value, index) => <p key={index}>{value} : ({index + 1})</p>)}
+      </article>
     </section>
     <Button onClick={handleClick}> Click </Button>
     </>
