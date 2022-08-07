@@ -34,8 +34,8 @@ const Effect = () => {
         wrapLines={true}
         />
       </div>
-      <p><strong>useEffect</strong> будет вызываться после каждой отрисовки нашего компонента <strong>Effect</strong></p>
-      <RenderEffect />
+      <p><strong>useEffect</strong> будет вызываться после каждой отрисовки нашего компонента <strong>Effect</strong>:</p>
+      <RenderEffect isOneCall = {false} />
       <p>Если такой частый вызов <strong>useEffect</strong> не устраивает, то можно вызывать наш хук при определенных
       условиях. Эти условия подставляются в качеcтве второго аргумента, в виде массива значений <strong>[]</strong></p>
       <div className='code-effect'>
@@ -47,7 +47,8 @@ const Effect = () => {
         />
       </div>
       <p>Если в массиве нет значений (<strong>[]-пустой</strong>), то <strong>useEffect</strong> вызовется <strong> только 1 раз</strong> после
-      первой отрисовки нашего компонента <strong>Effect</strong>.</p>
+      первой отрисовки нашего компонента <strong>Effect</strong>:</p>
+      <RenderEffect isOneCall = {true} />
     </div>
   )
 }

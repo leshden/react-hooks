@@ -2,17 +2,27 @@ import {useState} from 'react'
 import Button from '../button/Button';
 import './RenderEffect.css';
 
-const RenderEffect = () => {
+type Props = {
+  isOneCall: boolean;
+}
+
+const RenderEffect = ({isOneCall}:Props) => {
 
   const [renderTxt, setRenderTxt] = useState<string>('');
   const [consoleTxt, setConsoleTxt] = useState<string[]>([]);
   const [wave, setWave] = useState<{right: string, transition?: string}>({"right": "100%"})
 
+  const canCallEffect = () =>{
+    return (isOneCall && (consoleTxt.length === 0)) || (isOneCall === false)
+  }
+
   const handleClick = () => {
     setRenderTxt('Отрисовали компонент Effect');
     setWave({"right": "50%", "transition": "right 1s ease-in"})
     setTimeout(()=>{
-      setConsoleTxt([...consoleTxt, 'Вызывали переданную функцию']);
+      if (canCallEffect()) {
+        setConsoleTxt([...consoleTxt, 'Вызывали переданную функцию']);
+      }
       setWave({"right": "100%"})
     }, 1000);
   }
