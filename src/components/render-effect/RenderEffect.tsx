@@ -21,7 +21,7 @@ const RenderEffect = ({isOneCall}:Props) => {
     setWave({"right": "50%", "transition": "right 1s ease-in"})
     setTimeout(()=>{
       if (canCallEffect()) {
-        setConsoleTxt([...consoleTxt, 'Вызывали переданную функцию']);
+        setConsoleTxt([...consoleTxt, 'Вызвали переданную функцию']);
       }
       setWave({"right": "100%"})
     }, 1000);
