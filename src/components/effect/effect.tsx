@@ -7,7 +7,7 @@ import './Effect.css'
 const Effect = () => {
 
   const arrowFunc = () => {
-    console.log('Вызывали переданную функцию');
+    console.log('Вызвали переданную функцию');
   }
 
   useEffect(arrowFunc);

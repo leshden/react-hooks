@@ -4,9 +4,10 @@ import './RenderEffect.css';
 
 type Props = {
   isOneCall: boolean;
+  msec?: number;
 }
 
-const RenderEffect = ({isOneCall}:Props) => {
+const RenderEffect = ({isOneCall, msec = 1000}:Props) => {
 
   const [renderTxt, setRenderTxt] = useState<string>('');
   const [consoleTxt, setConsoleTxt] = useState<string[]>([]);
@@ -24,7 +25,7 @@ const RenderEffect = ({isOneCall}:Props) => {
         setConsoleTxt([...consoleTxt, 'Вызвали переданную функцию']);
       }
       setWave({"right": "100%"})
-    }, 1000);
+    }, msec);
   }
 
   return(
