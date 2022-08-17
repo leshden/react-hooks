@@ -1,20 +1,32 @@
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import { CodeBlock, dracula } from "react-code-blocks";
-import {howAddFunctionToUseEffect, callUseEffectInComponent, callUseEffectWithSecondArg} from '../../code/use-effect/CodeStrings';
+import {howAddFunctionToUseEffect,
+        callUseEffectInComponent,
+        callUseEffectWithSecondArg,
+        callUseEffectInComponentDeps} from '../../code/use-effect/CodeStrings';
 import RenderEffect from '../render-effect/RenderEffect';
 import './Effect.css'
 
 const Effect = () => {
 
+  const [counter, setCounter] = useState(0);
+  const fixValue = {};
+
   const arrowFunc = () => {
     console.log('Вызвали переданную функцию');
   }
 
-  useEffect(arrowFunc);
+  useEffect(arrowFunc, [fixValue]);
+
+  const onClickBtn = () => {
+    setCounter(counter + 1);
+    console.log('Click Btn! UpdateState');
+  }
 
   return(
-    <div className='effect-container'>
+    <section className='effect-container'>
       <h1>useEffect</h1>
+      <button onClick={onClickBtn}>Rerender component</button>
       <p><strong>useEffect</strong> в качестве аргумента принимает <strong>функцию</strong>, которую потом будет вызывать.
       Функцию передать в хук можно разными способами.</p>
       <div className='code-effect'>
@@ -49,7 +61,17 @@ const Effect = () => {
       <p>Если в массиве нет значений (<strong>[]-пустой</strong>), то <strong>useEffect</strong> вызовется <strong> только 1 раз</strong> после
       первой отрисовки нашего компонента <strong>Effect</strong>:</p>
       <RenderEffect isOneCall = {true} />
-    </div>
+      <p>Теперь мы хотим, чтобы наш <strong>useEffect</strong> зависил от переменной, которое хранит число.
+      Как только значение переменной изменится, <strong>useEffect</strong> вызовется после отрисовки нашего компонента.</p>
+      <div className='code-effect'>
+        <CodeBlock
+        text={callUseEffectInComponentDeps}
+        language={'jsx'}
+        theme={dracula}
+        wrapLines={true}
+        />
+      </div>
+    </section>
   )
 }
 

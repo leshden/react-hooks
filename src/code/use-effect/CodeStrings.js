@@ -32,3 +32,10 @@ const arrowFunc = () => {
 }
 useEffect(arrowFunc, []); // [] - массив значений
 `;
+
+export const callUseEffectInComponentDeps = `const Effect = ({deps = 0}) => {
+  useEffect(() => {
+    console.log('Вызывали переданную функцию');
+  }, [deps])
+  return (<p> Отрисовали компонент Effect </p>)
+}`;
