@@ -12,20 +12,29 @@ const RenderEffect = ({isOneCall, msec = 1000}:Props) => {
   const [renderTxt, setRenderTxt] = useState<string>('');
   const [consoleTxt, setConsoleTxt] = useState<string[]>([]);
   const [wave, setWave] = useState<{right: string, transition?: string}>({"right": "100%"})
+  const [disabledBtn, setDisabledBtn] = useState(false);
 
   const canCallEffect = () =>{
     return (isOneCall && (consoleTxt.length === 0)) || (isOneCall === false)
   }
 
   const handleClick = () => {
+    setDisabledBtn(true);
     setRenderTxt('Отрисовали компонент Effect');
     setWave({"right": "50%", "transition": "right 1s ease-in"})
     setTimeout(()=>{
+      setDisabledBtn(false);
       if (canCallEffect()) {
         setConsoleTxt([...consoleTxt, 'Вызвали переданную функцию']);
       }
       setWave({"right": "100%"})
     }, msec);
+  }
+
+  const handleClickReset = () => {
+    setWave({"right": "100%"});
+    setConsoleTxt([]);
+    setRenderTxt('');
   }
 
   return(
@@ -42,7 +51,10 @@ const RenderEffect = ({isOneCall, msec = 1000}:Props) => {
         {consoleTxt.map((value, index) => <p key={index}>{value} : ({index + 1})</p>)}
       </article>
     </section>
-    <Button onClick={handleClick}> Click </Button>
+    <section className='render-effect-btn-container'>
+      <Button onClick={handleClick} disabled={disabledBtn}> Click </Button>
+      <Button onClick={handleClickReset} disabled={disabledBtn}> Reset </Button>
+    </section>
     </>
   );
 }
