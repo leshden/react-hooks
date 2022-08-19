@@ -3,8 +3,10 @@ import { CodeBlock, dracula } from "react-code-blocks";
 import {howAddFunctionToUseEffect,
         callUseEffectInComponent,
         callUseEffectWithSecondArg,
-        callUseEffectInComponentDeps} from '../../code/use-effect/CodeStrings';
+        callUseEffectInComponentDeps,
+        callUseEffectInComponentAndReset} from '../../code/use-effect/CodeStrings';
 import RenderEffect from '../render-effect/RenderEffect';
+import RenderEffectDeps from '../render-effect-deps/RenderEffectDeps';
 import './Effect.css'
 
 const Effect = () => {
@@ -13,7 +15,8 @@ const Effect = () => {
   const fixValue = {};
 
   const arrowFunc = () => {
-    console.log('Вызвали переданную функцию');
+    console.log('Подписка!');
+    return () => console.log('Отписка!');
   }
 
   useEffect(arrowFunc, [fixValue]);
@@ -66,6 +69,18 @@ const Effect = () => {
       <div className='code-effect'>
         <CodeBlock
         text={callUseEffectInComponentDeps}
+        language={'jsx'}
+        theme={dracula}
+        wrapLines={true}
+        />
+      </div>
+      <RenderEffectDeps />
+      <p>Иногда в <strong>useEffect</strong> мы что-то создаем и это что-то (например, на что-то подписались) необходимо очистить или сбросить (например, отписаться)
+      перед тем, как компонент покинет страницу или снова будет вызван <strong>useEffect</strong> после рендера. Для этого в <strong>useEffect</strong> добавляем <strong>return</strong>, который
+      возвращает функцию. </p>
+      <div className='code-effect'>
+        <CodeBlock
+        text={callUseEffectInComponentAndReset}
         language={'jsx'}
         theme={dracula}
         wrapLines={true}
