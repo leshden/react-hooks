@@ -1,0 +1,12 @@
+.menu-ul {
+  list-style-type: none;
+}
+
+.menu-ul li{
+  display: inline;
+  margin-left: 20px;
+}
+
+.menu-link {
+  text-decoration: none;
+}

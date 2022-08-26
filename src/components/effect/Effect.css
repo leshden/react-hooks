@@ -1,0 +1,10 @@
+.effect-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.code-effect {
+  width: 100%;
+  text-align: left;
+}
