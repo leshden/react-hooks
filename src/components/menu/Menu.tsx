@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import './Menu.css'
 
 type Props = {
@@ -11,8 +12,9 @@ const Menu = ({isDark}:Props) => {
   return (
     <nav className="menu-container">
       <ul className = 'menu-ul'>
-        <li><a className ={classes} href="#">useState</a></li>
-        <li><a className ={classes} href="#">useEffect</a></li>
+        <li><Link className={classes} to="/">Home</Link></li>
+        <li><Link className={classes} to="effect">useEffect</Link></li>
+        <li><Link className={classes} to="state">useState</Link></li>
       </ul>
     </nav>
   )
