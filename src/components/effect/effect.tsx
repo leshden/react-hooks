@@ -11,7 +11,8 @@ import './Effect.css'
 
 const Effect = () => {
 
-  const [counter, setCounter] = useState(0);
+  const f = (): number => 10
+  const [counter, setCounter] = useState(f);
   const fixValue = {};
 
   const arrowFunc = () => {
@@ -22,6 +23,7 @@ const Effect = () => {
   useEffect(arrowFunc, [fixValue]);
 
   const onClickBtn = () => {
+    console.log(`counter = ${counter}`);
     setCounter(counter + 1);
     console.log('Click Btn! UpdateState');
   }
