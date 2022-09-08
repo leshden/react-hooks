@@ -1,0 +1,14 @@
+.card-hook {
+  width: 200px;
+  height: 300px;
+  margin-left: 30px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  box-shadow: 0px 0px 10px gray;
+  transition: all .2s ease-in-out;
+}
+
+.card-hook:hover {
+  cursor:pointer;
+  transform: scale(1.05);
+}

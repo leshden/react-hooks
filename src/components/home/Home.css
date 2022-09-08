@@ -9,14 +9,6 @@
   align-items: center;
 }
 
-.card-hook {
-  width: 200px;
-  height: 300px;
-  border-radius: 20px;
-  border: 1px solid gray;
-  box-shadow: 0px 0px 10px gray;
-}
-
 .home-footer {
   height: 20%;
   border-top: 1px solid gray;
