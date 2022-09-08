@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import { CodeBlock, dracula } from "react-code-blocks";
-import {howInitUseState} from '../../code/use-state/CodeStrings';
+import {howInitUseState, howUpdateUseState} from '../../code/use-state/CodeStrings';
 import './State.css';
 
 const State = () => {
@@ -29,6 +29,14 @@ const State = () => {
       </p>
       <p> Обновим счетчик через клик по кнопке. Как только пользователь нажал на кнопку, счетчик обновился,
       мы говорим <strong>React</strong> что надо перерисовать компоннет. </p>
+      <div className='code-state'>
+        <CodeBlock
+        text={howUpdateUseState}
+        language={'jsx'}
+        theme={dracula}
+        wrapLines={true}
+        />
+      </div>
     </section>
   )
 }
