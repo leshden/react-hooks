@@ -1,0 +1,7 @@
+.state-react-container {
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  overflow: auto;
+  font-size: 20px;
+}

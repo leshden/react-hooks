@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import { CodeBlock, dracula } from "react-code-blocks";
 import {howInitUseState, howUpdateUseState} from '../../code/use-state/CodeStrings';
+import RenderState from '../render-state/RenderState';
 import './State.css';
 
 const State = () => {
@@ -27,7 +28,7 @@ const State = () => {
         <strong>setCounter</strong> - название функции, которая будет менять наш <strong>counter</strong> <br/>
         <strong>0</strong> - инитим наш <strong>counter</strong> <br/>
       </p>
-      <p> Обновим счетчик через клик по кнопке. Как только пользователь нажал на кнопку, счетчик обновился,
+      <p> Обновим счетчик через клик по кнопке. Как только пользователь нажал на кнопку, меняем сосстояние счетчика через <strong>setCounter</strong>,
       мы говорим <strong>React</strong> что надо перерисовать компоннет. </p>
       <div className='code-state'>
         <CodeBlock
@@ -37,6 +38,7 @@ const State = () => {
         wrapLines={true}
         />
       </div>
+      <RenderState />
     </section>
   )
 }
