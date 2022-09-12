@@ -10,7 +10,7 @@ const Card = ({title, path}: Props) => {
   const navigate = useNavigate();
 
   const handleOnClcik = () => {
-    navigate(`/${path}`);
+    navigate(`${path}`);
   }
 
   return (

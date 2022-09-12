@@ -10,6 +10,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
+import {ROOT_PATH, USE_EFFECT_PATH, USE_STATE_PATH} from './constants/Path';
 
 function App() {
 
@@ -21,9 +22,9 @@ function App() {
       <div className={classes}>
         <Header />
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/effect" element={<Effect/>}/>
-          <Route path="/state" element={<State/>}/>
+          <Route path={ROOT_PATH} element={<Home/>}/>
+          <Route path={USE_EFFECT_PATH} element={<Effect/>}/>
+          <Route path={USE_STATE_PATH} element={<State/>}/>
         </Routes>
       </div>
     </Router>
