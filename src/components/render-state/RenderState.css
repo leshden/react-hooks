@@ -1,3 +1,25 @@
+.render-container {
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid gray;
+}
+
+.render-title-container {
+  width: 100%;
+  height: 20%;
+  border: 1px solid gray;
+  font-size: 15px;
+}
+
+.render-body-container {
+  height: 80%;
+}
+
 .state-react-container {
   width: 50%;
   height: 100%;

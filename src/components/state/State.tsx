@@ -38,7 +38,9 @@ const State = () => {
         wrapLines={true}
         />
       </div>
+      <br/>
       <RenderState />
+      <br/>
     </section>
   )
 }
