@@ -18,12 +18,17 @@
 
 .render-body-container {
   height: 80%;
+  font-size: 20px;
 }
 
-.state-react-container {
-  width: 50%;
-  height: 100%;
-  z-index: 1;
-  overflow: auto;
-  font-size: 20px;
+.render-wave {
+  content: "";
+  position: absolute;
+  background: lightblue;
+  bottom: 0;
+  left: 0;
+  right: 100%;
+  top: 0;
+  z-index: 0;
+  opacity: 0.5;
 }
