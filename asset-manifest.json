@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-hooks/static/css/main.b13cf3e5.css",
+    "main.css": "/react-hooks/static/css/main.df81d6bf.css",
     "main.js": "/react-hooks/static/js/main.d2bc466f.js",
     "react-syntax-highlighter/refractor-core-import.js": "/react-hooks/static/js/react-syntax-highlighter/refractor-core-import.8ff1e745.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js": "/react-hooks/static/js/react-syntax-highlighter_languages_refractor_abap.00d2d9f3.chunk.js",
@@ -158,7 +158,7 @@
     "static/media/sun.svg": "/react-hooks/static/media/sun.59a2f023509e767e96001e5c7480342d.svg",
     "static/media/moon.svg": "/react-hooks/static/media/moon.09d4097d1c644523a337937e373933e0.svg",
     "index.html": "/react-hooks/index.html",
-    "main.b13cf3e5.css.map": "/react-hooks/static/css/main.b13cf3e5.css.map",
+    "main.df81d6bf.css.map": "/react-hooks/static/css/main.df81d6bf.css.map",
     "main.d2bc466f.js.map": "/react-hooks/static/js/main.d2bc466f.js.map",
     "refractor-core-import.8ff1e745.chunk.js.map": "/react-hooks/static/js/react-syntax-highlighter/refractor-core-import.8ff1e745.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.00d2d9f3.chunk.js.map": "/react-hooks/static/js/react-syntax-highlighter_languages_refractor_abap.00d2d9f3.chunk.js.map",
@@ -315,7 +315,7 @@
     "787.f2e22480.chunk.js.map": "/react-hooks/static/js/787.f2e22480.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b13cf3e5.css",
+    "static/css/main.df81d6bf.css",
     "static/js/main.d2bc466f.js"
   ]
 }
