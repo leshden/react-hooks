@@ -7,6 +7,7 @@ import {howAddFunctionToUseEffect,
         callUseEffectInComponentAndReset} from '../../code/use-effect/CodeStrings';
 import RenderEffect from '../render-effect/RenderEffect';
 import RenderEffectDeps from '../render-effect-deps/RenderEffectDeps';
+import Disqus from '../disqus/Disqus';
 import './Effect.css'
 
 const Effect = () => {
@@ -29,6 +30,7 @@ const Effect = () => {
   }
 
   return(
+    <>
     <section className='effect-container'>
       <h1>useEffect</h1>
       <button onClick={onClickBtn}>Rerender component</button>
@@ -89,6 +91,8 @@ const Effect = () => {
         />
       </div>
     </section>
+    <Disqus />
+    </>
   )
 }
 
