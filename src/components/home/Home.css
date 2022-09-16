@@ -4,8 +4,9 @@
 
 .card-hook-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   height: 80%;
+  width: 100%;
   align-items: center;
 }
 
