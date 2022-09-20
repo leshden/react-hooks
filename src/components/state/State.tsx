@@ -2,6 +2,8 @@ import {useState} from 'react';
 import { CodeBlock, dracula } from "react-code-blocks";
 import {howInitUseState, howUpdateUseState} from '../../code/use-state/CodeStrings';
 import RenderState from '../render-state/RenderState';
+import {USE_STATE_PATH} from '../../constants/Path';
+import Disqus from '../disqus/Disqus';
 import './State.css';
 
 const State = () => {
@@ -11,6 +13,7 @@ const State = () => {
   }
 
   return (
+    <>
     <section className='state-container'>
       <button onClick={handleOnClcik}>Rerender component</button>
       <p>Когда нам нужно сохранить сотояние между перересовкой компоннета (например, сохранить счетчик,
@@ -42,6 +45,8 @@ const State = () => {
       <RenderState />
       <br/>
     </section>
+    <Disqus path={USE_STATE_PATH} />
+    </>
   )
 }
 

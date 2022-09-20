@@ -8,6 +8,7 @@ import {howAddFunctionToUseEffect,
 import RenderEffect from '../render-effect/RenderEffect';
 import RenderEffectDeps from '../render-effect-deps/RenderEffectDeps';
 import Disqus from '../disqus/Disqus';
+import {USE_EFFECT_PATH} from '../../constants/Path';
 import './Effect.css'
 
 const Effect = () => {
@@ -91,7 +92,7 @@ const Effect = () => {
         />
       </div>
     </section>
-    <Disqus />
+    <Disqus path={USE_EFFECT_PATH} />
     </>
   )
 }

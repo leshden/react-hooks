@@ -22,9 +22,9 @@ function App() {
       <div className={classes}>
         <Header />
         <Routes>
-          <Route path={ROOT_PATH} element={<Home/>}/>
           <Route path={USE_EFFECT_FULL_PATH} element={<Effect/>}/>
           <Route path={USE_STATE_FULL_PATH} element={<State/>}/>
+          <Route path={ROOT_PATH} element={<Home/>}/>
         </Routes>
       </div>
     </Router>

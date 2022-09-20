@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {ROOT_PATH, USE_EFFECT_PATH, USE_STATE_PATH} from '../../constants/Path';
+import {ROOT_PATH, USE_EFFECT_FULL_PATH, USE_STATE_FULL_PATH} from '../../constants/Path';
 import './Menu.css'
 
 type Props = {
@@ -14,8 +14,8 @@ const Menu = ({isDark}:Props) => {
     <nav className="menu-container">
       <ul className = 'menu-ul'>
         <li><Link className={classes} to={ROOT_PATH}>Home</Link></li>
-        <li><Link className={classes} to={USE_EFFECT_PATH}>useEffect</Link></li>
-        <li><Link className={classes} to={USE_STATE_PATH}>useState</Link></li>
+        <li><Link className={classes} to={USE_EFFECT_FULL_PATH}>useEffect</Link></li>
+        <li><Link className={classes} to={USE_STATE_FULL_PATH}>useState</Link></li>
       </ul>
     </nav>
   )
