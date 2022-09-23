@@ -15,14 +15,13 @@ const Effect = () => {
 
   const f = (): number => 10
   const [counter, setCounter] = useState(f);
-  const fixValue = {};
 
   const arrowFunc = () => {
     console.log('Подписка!');
     return () => console.log('Отписка!');
   }
 
-  useEffect(arrowFunc, [fixValue]);
+  useEffect(arrowFunc, []);
 
   const onClickBtn = () => {
     console.log(`counter = ${counter}`);
