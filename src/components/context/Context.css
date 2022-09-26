@@ -1,0 +1,60 @@
+.example-site-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.example-site-main {
+  width: 80%;
+  height: 100%;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+}
+
+.example-site-header {
+  height: 20%;
+  width: 100%;
+  background-color: red;
+  display: flex;
+}
+
+.example-site-logo {
+  height: 100%;
+  width: 20%;
+  background-color: green;
+}
+
+.example-site-menu-bar {
+  height: 100%;
+  width: 60%;
+  background-color: lightblue;
+}
+
+.example-site-search-bar {
+  height: 100%;
+  width: 20%;
+  background-color: brown;
+}
+
+.example-site-content {
+  height: 80%;
+  width: 100%;
+  background-color: orange;
+  display: flex;
+}
+
+.example-site-content-side-bar {
+  height: 100%;
+  width: 20%;
+  background-color: blue;
+}
+
+.example-site-content-main {
+  height: 100%;
+  width: 80%;
+  background-color: lightgray;
+}
