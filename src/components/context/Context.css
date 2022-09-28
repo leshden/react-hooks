@@ -1,0 +1,15 @@
+.example-site-dom-line {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-site-dom-node {
+  width: 100px;
+  height: 50px;
+  background: orange;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 10px;
+}
